@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha384-PmY9l28YgO4JwMKbTvgaS7XNZJ30MK9FAZjjzXtlqyZCqBY6X6bXIkM++IkyinN+" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css.css">
+    <link rel="stylesheet" type="text/css" href="../css/css.css">
     <title>Admin home</title>
 </head>
+
+<div class="container" ng-controller = "ctrlAdministrador">
 <body>
   <header>
     <div class ="container-fluid">
@@ -16,12 +18,6 @@
                 <div class="navbar-header">
                 <a class="navbar-brand" href="Portada.html">Inicio</a>
                 </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="registro.html"><span class="glyphicon glyphicon-user"></span>Registro</a></li>
-                    <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
-                </ul>
-                </div>      
             </div>
         </nav> 
     </div>
@@ -43,138 +39,148 @@
     </div>
 
     <!--CREAR EJECUTIVO-->
+    <div class="row">
+        <div class="col-md-4">
+            <br><br><br>
+            <button type="button" class="btn btn-primary btn-block" ng-click="ngMostrarOcultarFunBanc(ngMostrarOcultarBanc)">Actualizar Banco</button>
+            <button type="button" class="btn btn-primary btn-block" ng-click="ngMostrarOcultarFunEje(ngMostrarOcultarEje)">Crear Ejecutivo  </button>
+            <button type="button" class="btn btn-primary btn-block" ng-click="ngMostrarOcultarFunUsu(ngMostrarOcultarUsu)">Crear Usuario </button>
+        </div>
+        <div class="col-md-1"></div>
+        <div style="text-align: center" class="col-md-6" ng-show="ngMostrarOcultarEje">
+            <h3 style="text-align:left">Registro de Ejecutivo</h3>
+            <div class="input-group col-xs-8">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input type="text" class="form-control" placeholder="11.111.111-1"  ng-model="rut" required="required" ng-pattern = "/^[0-9]{1,2}.[0-9]{3}.[0-9]{3}-[0-9Kk]{1}$/">                
+            </div>
+            
+            <!--PASSWORD-->
+            <div class="input-group col-xs-8">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                <input type="password" class="form-control" placeholder="Password"  ng-model="password" required="required">
+            </div>
+        
+            <!--NOMBRE-->
+        
+            <div class="input-group col-xs-8">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input type="text" class="form-control" placeholder="Nombre"  ng-model="nombre" required="required">
+            </div>
+        
+            <!--APELLIDOS-->
+        
+            <div class="input-group col-xs-8">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input type="text" class="form-control" placeholder="Apellidos"  ng-model="apellido" required="required">
+            </div>
+        
+            <!--CORREO-->
+        
+            <div class="input-group col-xs-8">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                    <input type="email" class="form-control" placeholder="Ejemplo@ejemplo.com"  ng-model="correo" required="required">
+            </div>
+            
+        
+            <div style="text-align:left">
+                <br>
+                <button id="submit_btn" class="btn btn-primary" ng-click="crearUsuarioEjecutivo()" >Crear</button>
+                <button type="reset" class="btn btn-secondary">Limpiar</button>
+             <!--MENSAJE DE EXITO AL CREAR EJECUTIVO-->
+                <div class="col-md-10 col-xs-offset-4" style="padding:20px;">
+                    <div class="bg-warning col-xs-4"  ng-show="mostrarMensaje1" >
+                    {{mensaje1}}
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!--CREAR USUARIO NORMAL-->
+        <div style="text-align:center" class="col-md-6" ng-show = "ngMostrarOcultarUsu">
+            <h3 style="text-align:left">Registro de Usuario</h3>          
+            <!--RUT-->
 
-    <button ng-click ="ngMostrarOcultarFunEje(ngMostrarOcultarEje)">Crear Ejecutivo  </button>
-    <div ng-show = "ngMostrarOcultarEje">
-   
-    <!--RUT-->
-
-    <div class="input-group col-xs-4">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <input type="text" class="form-control" placeholder="11.111.111-1"  ng-model="rut" required="required" ng-pattern = "/^[0-9]{1,2}.[0-9]{3}.[0-9]{3}-[0-9Kk]{1}$/">                
-    </div>
-    
-    <!--PASSWORD-->
-    <div class="input-group col-xs-4">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-        <input type="password" class="form-control" placeholder="Password"  ng-model="password" required="required">
-    </div>
-
-    <!--NOMBRE-->
-
-    <div class="input-group col-xs-4">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input type="text" class="form-control" placeholder="Nombre"  ng-model="nombre" required="required">
-    </div>
-
-    <!--APELLIDOS-->
-
-    <div class="input-group col-xs-4">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input type="text" class="form-control" placeholder="Apellidos"  ng-model="apellido" required="required">
-    </div>
-
-    <!--CORREO-->
-
-    <div class="input-group col-xs-4">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-            <input type="email" class="form-control" placeholder="Ejemplo@ejemplo.com"  ng-model="correo" required="required">
-    </div>
-
-
-<div>
-    <button id="submit_btn" class="btn btn-primary" ng-click="crearUsuarioEjecutivo()" >Crear</button>
-    <button type="reset" class="btn btn-secondary">Limpiar</button>
-     <!--MENSAJE DE EXITO AL CREAR EJECUTIVO-->
-    <div class="col-md-10 col-xs-offset-4" style="padding:20px;">
-            <div class="bg-warning col-xs-4"  ng-show="mostrarMensaje1" >
-            {{mensaje1}}
-        </div></div></div>
-</div>
-
-
-                    <!--CREAR USUARIO NORMAL-->
-    
-    <button ng-click ="ngMostrarOcultarFunUsu
-    (ngMostrarOcultarUsu)">Crear Usuario </button>
-    <div ng-show = "ngMostrarOcultarUsu">          
-                    <!--RUT-->
- 
- <div class="input-group col-xs-4">
+        <div class="input-group col-xs-8">
         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
         <input type="text" class="form-control" placeholder="11.111.111-1"  ng-model="rutUs" required="required" ng-pattern = "/^[0-9]{1,2}.[0-9]{3}.[0-9]{3}-[0-9Kk]{1}$/">                
-    </div>
-    
+        </div>
+
                 <!--PASSWORD-->
-    <div class="input-group col-xs-4">
+        <div class="input-group col-xs-8">
         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
         <input type="password" class="form-control" placeholder="Password"  ng-model="passwordUs" required="required">
-    </div>
+        </div>
 
-                 <!--NOMBRE-->
+                <!--NOMBRE-->
 
-    <div class="input-group col-xs-4">
+        <div class="input-group col-xs-8">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
             <input type="text" class="form-control" placeholder="Nombre"  ng-model="nombreUs" required="required">
-    </div>
+        </div>
 
                 <!--APELLIDOS-->
 
-    <div class="input-group col-xs-4">
+        <div class="input-group col-xs-8">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
             <input type="text" class="form-control" placeholder="Apellidos"  ng-model="apellidoUs" required="required">
-    </div>
+        </div>
 
-                 <!--CORREO-->
+                <!--CORREO-->
 
-    <div class="input-group col-xs-4">
+        <div class="input-group col-xs-8">
             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
             <input type="email" class="form-control" placeholder="Ejemplo@ejemplo.com"  ng-model="correoUs" required="required">
+        </div>
+
+
+            <div align="left"><br>
+            <button id="submit_btn" class="btn btn-primary" ng-click="crearUsuario()" >Crear</button>
+            <button type="reset" class="btn btn-secondary">Limpiar</button>
+        <!--MENSAJE DE EXITO AL CREAR USUARIO-->
+                <div class="col-md-10 col-xs-offset-4" style="padding:20px;">
+                    <div class="bg-warning col-xs-4"  ng-show="mostrarMensaje" >
+                     {{mensaje}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6" ng-show = "ngMostrarOcultarBanc">
+            <form>
+                <h3 align="center">Actualizar datos de bancos</h3>
+                <div>
+                    <input  type ="name" class="form-control" placeholder="Nombre Banco" ng-model="idNombre" required/>    
+                </div>
+        
+                <div>
+                    <input type ="number" min="0" step=".01" class ="form-control" placeholder="CAE ej: '23.4'" ng-model="cae">
+                </div>
+        
+                <div>
+                    <input type = "number" min="0" step=".01" class="form-control" placeholder="Tasa de Interes ej: '1.3'" ng-model="tasaInteresMensual">
+                </div>
+        
+                <div>
+                    <input type ="number" min="0" class="form-control" placeholder="Gastos asociados" ng-model="gastosAsociados">
+                </div>
+                    
+                <div style="text-align:left"><br>
+                    <button type="submit" class="btn btn-primary" ng-click="actualizarDatos()">Actualizar</button>
+                    <div ng-show = "mostrarMensaje2">{{mensaje2}}</div>
+                </div>
+            </form>
+        </div>
     </div>
 
-
-<div>
-    <button id="submit_btn" class="btn btn-primary" ng-click="crearUsuario()" >Crear</button>
-    <button type="reset" class="btn btn-secondary">Limpiar</button>
-    <!--MENSAJE DE EXITO AL CREAR USUARIO-->
-    <div class="col-md-10 col-xs-offset-4" style="padding:20px;">
-            <div class="bg-warning col-xs-4"  ng-show="mostrarMensaje" >
-            {{mensaje}}
-        </div></div></div>
-</div>  
+                    
+      
 
 
  <!--SETEAR CAE, INTERES Y GASTOS ASOCIADOS-->
 
-    <form>
-        <h3>Actualizar datos de bancos</h3>
-        <div>
-            <input type ="name" class="form-control" placeholder="Nombre Banco" ng-model="idNombre" required/>    
-        </div>
-
-        <div>
-            <input type ="number" min="0" step=".01" class ="form-control" placeholder="CAE ej: '23.4'" ng-model="cae">
-        </div>
-
-        <div>
-            <input type = "number" min="0" step=".01" class="form-control" placeholder="Tasa de Interes ej: '1.3'" ng-model="tasaInteresMensual">
-        </div>
-
-        <div>
-            <input type ="number" min="0" class="form-control" placeholder="Gastos asociados" ng-model="gastosAsociados">
-        </div>
-            
-        <div>
-            <button type="submit" class="btn btn-primary" ng-click="actualizarDatos()">Actualizar</button>
-            <div ng-show = "mostrarMensaje2">{{mensaje2}}</div>
-        </div>
-
-
-    </form>
-
-
-
-
+</div>
+<footer>
+    <p style="color:white" class="text-center"><i>Todos los Derechos Reservados</i></p>
+    <p style="color:white" class="text-center"><i>(Componentes del footer)</i></p>
+</footer>
 </div>
 
 

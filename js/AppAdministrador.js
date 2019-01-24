@@ -15,6 +15,8 @@ app.controller('ctrlAdministrador',function($scope,$http,$sce,$timeout){
             $scope.ngMostrarOcultarEje = false;
         }else{
             $scope.ngMostrarOcultarEje = true;
+            $scope.ngMostrarOcultarBanc = false;
+            $scope.ngMostrarOcultarUsu = false;
         }
     }
 
@@ -24,6 +26,19 @@ app.controller('ctrlAdministrador',function($scope,$http,$sce,$timeout){
             $scope.ngMostrarOcultarUsu = false;
         }else{
             $scope.ngMostrarOcultarUsu = true;
+            $scope.ngMostrarOcultarEje = false;
+            $scope.ngMostrarOcultarBanc = false;
+        }
+    }
+
+    $scope.ngMostrarOcultarBanc = false;
+    $scope.ngMostrarOcultarFunBanc = function(ver){
+        if(ver){
+            $scope.ngMostrarOcultarBanc = false;
+        }else{
+            $scope.ngMostrarOcultarBanc = true;
+            $scope.ngMostrarOcultarEje = false;
+            $scope.ngMostrarOcultarUsu = false;
         }
     }
   
