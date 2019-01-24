@@ -10,9 +10,9 @@
 
 
 </head>
-<body style="background: #ebebeb;" >
+<body>
 
-
+<div class="container">
     <!--Barra de arriba-->
     <div class = "container-fluid" ng-controller="ctrlLogin">
         <nav class="navbar navbar-inverse">
@@ -22,7 +22,7 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="registro.html"><span class="glyphicon glyphicon-user"></span>Registrate</a></li>
+                    <li><a href="registro.html"><span class="glyphicon glyphicon-user"></span>Registro</a></li>
                 </ul>
                 </div>
             </div>
@@ -30,39 +30,37 @@
        
                      <!-- Login -->
 <div align="center" class="container" ng-show ="mostrarLogin">
-    <h1  class="text-primary">Simulador de Creditos</h1>
+    <h1  class="text-info" style="font-size:50px">Simulador de Creditos</h1>
     <hr/>
 
-    <div style="padding:40px;">
-        <h3 class="text-warning" >Iniciar Sesion</h3><br>
+    <div class="container" style="background-color: rgba(0, 0, 0, 0.5);width:40%;" >
+        <h3 style="color:white;font-size:40px">Iniciar Sesion</h3><hr>
 
         <!----- Informacion de login ------>
         <!--RUT-->
-        <div class="input-group col-xs-4">
+        <div class="input-group col-md-8">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
             <input type="text" class="form-control" placeholder="11.111.111-1" name="rut" ng-pattern = "/^[0-9]{1,2}.[0-9]{3}.[0-9]{3}-[0-9Kk]{1}$/"  ng-model="rut" required="required" maxlength="12">                
         </div>
              
         <!--PASSWORD-->
-        <div class="input-group col-xs-4">
+        <div class="input-group col-md-8">
             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
             <input type="password" class="form-control" placeholder="Pass" name="password" ng-model="password" required="required">
-        </div>
-
+        </div><hr>
 
         <!--Mensaje de error-->
         <div class="col-md-10 col-xs-offset-4" style="padding:20px;">
-            <div class="bg-warning col-xs-4"  ng-show="mostrarError" >
-            {{mensaje}} 
+            <div style="color:red" class="bg-warning col-xs-4"  ng-show="mostrarError" >
+            <i>{{mensaje}}</i>
             </div>
         </div>
 
-        <br>
 
         <!----- Boton, con funcion login() ------>
         <div> 
-        <button id="submit_btn" class="btn btn-primary" ng-click="login()" >Iniciar</button> 
-        <a id="submit_btn" class="btn" href="registro.html">Registrarse</a>            
+        <button id="submit_btn" style="font-size:20px" class="btn btn-primary" ng-click="login()" >Iniciar</button> 
+        <a id="submit_btn" style="font-size:20px;color: lightgreen" class="btn btn-link" href="registro.html">Registrarse</a><br><br>            
     </div>
     
 
@@ -71,10 +69,10 @@
 
 
 <footer>
-    <p style="color:red" class="text-center">Todos los Derechos Reservados</p>
-    <p style="color:red" class="text-center">(Componentes del footer)</p>
+    <p style="color:white" class="text-center"><i>Todos los Derechos Reservados</i></p>
+    <p style="color:white" class="text-center"><i>(Componentes del footer)</i></p>
 </footer>
-
+</div>
 
 
                     

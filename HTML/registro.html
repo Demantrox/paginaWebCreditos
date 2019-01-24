@@ -5,10 +5,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha384-PmY9l28YgO4JwMKbTvgaS7XNZJ30MK9FAZjjzXtlqyZCqBY6X6bXIkM++IkyinN+" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css.css">
     <title>Registro</title>
 </head>
 
-<body style ="background-color:slateblue">
+<body>
+
+<div class="container">
 
 <div class="container-fluid" align="center" ng-controller = "ctrlRegistro">
 
@@ -23,7 +26,7 @@
 
     <div class="row">
 
-        <div class="col-md-3 col-md-offset-4" style="background:rgb(178, 153, 189);padding:10px;margin-top:60px;">
+        <div class="col-md-4 col-md-offset-4" style="background:rgba(0, 0, 0, 0.5);padding:2px;margin-top:50px;">
             <h1 style = "color:black">Registrate</h1>
             <hr><br>
         
@@ -31,38 +34,38 @@
         <form>
 
             
-            <div class="input-group col-xs-6">
+            <div class="input-group col-sm-8">
                 <span class="input-group-addon"><i class ="glyphicon glyphicon-user"></i></span>
                 <input type="text" class="form-control" placeholder="Nombre" ng-model="nombre" >
             </div>
             <br>
             
-            <div class="input-group col-xs-6">
+            <div class="input-group col-sm-8">
                 <span class="input-group-addon"><i class ="glyphicon glyphicon-user"></i></span>
                 <input type="text" class="form-control" placeholder="Apellidos" ng-model="apellido" required/>
             </div>
             <br>
             
-            <div class="input-group col-xs-6">
+            <div class="input-group col-sm-8">
                     <span class="input-group-addon"><i class ="glyphicon glyphicon-user"></i></span>
                 <input type="text" class="form-control" placeholder="Rut ej: 11.111.111-1" ng-pattern = "/^[0-9]{1,2}.[0-9]{3}.[0-9]{3}-[0-9Kk]{1}$/" ng-model="rut" required/>
             </div>
             <br>
             
-            <div class="input-group col-xs-6">
+            <div class="input-group col-sm-8">
                     <span class="input-group-addon"><i class ="glyphicon glyphicon-lock"></i></span>
                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" ng-model="password" required/>
             </div>
             <br>
 
             
-            <div class="input-group col-xs-6">
+            <div class="input-group col-sm-8">
                     <span class="input-group-addon"><i class ="glyphicon glyphicon-lock"></i></span>
                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Repetir password" ng-model="validacionPassword" required/>
             </div>
             <br>
             
-            <div class="input-group col-xs-6">
+            <div class="input-group col-sm-8">
                 <span class="input-group-addon"><i class ="glyphicon glyphicon-inbox"></i></span>
                 <input type="text" class="form-control"  placeholder="ejemplo@ejemplo.cl" ng-model="correo" required/>
             </div>
@@ -77,6 +80,7 @@
             <div  role="group" aria-label="Basic example">
                 <button type="reset" class="btn btn-secondary">Limpiar</button>
                 <button type="button" class="btn btn-primary" ng-click="registrar()">Registrarse</button>
+                <br><br>
             </div>
             
         </div>
@@ -84,7 +88,12 @@
     </form>
 
 </div>
+<footer>
+    <p style="color:white" class="text-center"><i>Todos los Derechos Reservados</i></p>
+    <p style="color:white" class="text-center"><i>(Componentes del footer)</i></p>
+</footer>
 
+</div>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

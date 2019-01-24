@@ -2,14 +2,30 @@ var app = angular.module('AppAdministrador', [])
 
 app.controller('ctrlAdministrador',function($scope,$http,$sce,$timeout){
 
-    $scope.mostrarFormularioEjecutivo = false;
-    $scope.mostrarFormularioEjecutivo = false;
     $scope.mostrarMensaje = false;
     $scope.mostrarMensaje1 = false;
     $scope.mostrarMensaje2 = false;
     $scope.mensaje = "";
     $scope.mensaje2= "";
     $scope.mensaje3= "";
+
+    $scope.ngMostrarOcultarEje = false;
+    $scope.ngMostrarOcultarFunEje = function(ver){
+        if(ver){
+            $scope.ngMostrarOcultarEje = false;
+        }else{
+            $scope.ngMostrarOcultarEje = true;
+        }
+    }
+
+    $scope.ngMostrarOcultarUsu = false;
+    $scope.ngMostrarOcultarFunUsu = function(ver){
+        if(ver){
+            $scope.ngMostrarOcultarUsu = false;
+        }else{
+            $scope.ngMostrarOcultarUsu = true;
+        }
+    }
   
 
     $scope.trustSrc = function(src){

@@ -6,17 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Configuraciones</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha384-PmY9l28YgO4JwMKbTvgaS7XNZJ30MK9FAZjjzXtlqyZCqBY6X6bXIkM++IkyinN+" crossorigin="anonymous">
-
+    <link rel="stylesheet" type="text/css" href="css.css">
 </head>
 <body>
     
-<div ng-controller="ctrlUsuario">
+<div class="container">  
+      
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+            <a class="navbar-brand" href="Portada.html">Inicio</a>
+            </div>
+        </div>
+    </nav> 
+    <div class="container" ng-controller="ctrlUsuario" align="center">
+            
                              <!--EDITAR USUARIO-->
-          <h1>CONFIGURACION USUARIO</h1>
+          <h1 class="text-primary" style="text-align:center">CONFIGURACION DE PERFIL</h1><hr>
                             <!--RUT-->
          
         <div class="input-group col-xs-4">
-           
+            
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
             <input type="text" class="form-control" placeholder="11.111.111-1  **OBLIGATORIO**"  ng-model="rut" required="required" ng-pattern = "/^[0-9]{1,2}.[0-9]{3}.[0-9]{3}-[0-9Kk]{1}$/" required/>                
         </div>
@@ -29,6 +39,7 @@
         </div>
                         <!--NUEVA PASSWORD-->
         <div class="input-group col-xs-4">
+
             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
             <input type="password" class="form-control" placeholder="Nueva Password  **OPCIONAL**"   ng-model="nuevaPassword">
         </div>
@@ -39,12 +50,12 @@
             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
             <input type="text" class="form-control" placeholder="Email **OPCIONAL**"  ng-model="correo">
         </div>
-         
-        <button id="submit_btn" class="btn btn-primary" ng-click="actualizarDatos()" >Actualizar</button> 
-        <div class="col-md-10 col-xs-offset-4" style="padding:20px;">
+        <hr>
+        <button id="submit_btn" style="font-size:20px" class="btn btn-primary" ng-click="actualizarDatos()" >Actualizar</button> 
+        <div class="col-md-10 col-xs-offset-4" style="padding:20px;text-align: center">
             
             <div class="bg-warning col-xs-4"  ng-show="mostrarMensaje">
-                {{mensaje}}
+                <i>{{mensaje}}</i>
             </div>
         </div>
 
@@ -52,10 +63,16 @@
 
 
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha384-vhJnz1OVIdLktyixHY4Uk3OHEwdQqPppqYR8+5mjsauETgLOcEynD9oPHhhz18Nw" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
 <script src="../js/AppUsuario.js" type = text/javascript></script>
+
+<footer>
+    <p style="color:white" class="text-center"><i>Todos los Derechos Reservados</i></p>
+    <p style="color:white" class="text-center"><i>(Componentes del footer)</i></p>
+</footer>
+
 </div>
 
 </body>

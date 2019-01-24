@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha384-PmY9l28YgO4JwMKbTvgaS7XNZJ30MK9FAZjjzXtlqyZCqBY6X6bXIkM++IkyinN+" crossorigin="anonymous">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css.css">
     <title>Simular</title>
 </head>
 <body>
@@ -12,21 +13,22 @@
 <div class="container" ng-controller="ctrlTabla">
     
         <div class = "container-fluid" ng-controller="ctrlTabla">
-                <nav class="navbar navbar-inverse">
-                    <div class="container-fluid">
-                        <div class="navbar-header">
-                        <a class="navbar-brand" href="Portada.html">Inicio</a>
-                        </div>
-                        <div class="collapse navbar-collapse" id="myNavbar">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="registro.html"><span class="glyphicon glyphicon-user"></span> Registrate</a></li>
-                            <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Log in</a></li>
-                        </ul>
-                        </div>
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                    <a class="navbar-brand" href="Portada.html">Inicio</a>
                     </div>
-                </nav>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="registro.html"><span class="glyphicon glyphicon-user"></span> Registrate</a></li>
+                        <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Log in</a></li>
+                    </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
             <!--FORMULARIO DATOS PARA SOLICITAR CREDITO-->
-
+    <br><hr>
 <form>
             <!--MONTO A SOLICITAR-->
     <div class="form-group" ng-show="Mostrar">
@@ -83,22 +85,32 @@
                 <option value="Scotiabank">Scotiabank</option>
             </select>
                             
-                                 <!--BOTONES-->
-    <!--Mostrar consulta personalizada, Simular con un banco o simular con todos-->
-            <button class="btn btn-success btn-sm" ng-click="MostrarOtros('show')">Personalizar Mi Credito</button>
-            <button class="btn btn-primary " ng-click="llamarDatos()" >Simular</button>
-            <button type="input" class="btn btn-secondary"  ng-click=traerBanco() >Simular Banco</button>
+  
         </div>
     </div>
+    <br><hr>
+                                   <!--BOTONES-->
+    <!--Mostrar consulta personalizada, Simular con un banco o simular con todos-->
+    <div style="text-align:center">
+        <button class="btn btn-success btn-sm" ng-click="MostrarOtros('show')">Personalizar Mi Credito</button>
+        <button class="btn btn-primary " ng-click="llamarDatos()" >Simular</button>
+        <button type="input" class="btn btn-info"  ng-click=traerBanco() >Simular Banco</button>
+    </div><hr>
 
-                        <!--Datos a ingresar en consulta personalizada-->
-    <div class="form-group col-md-3" ng-show="Ocultar">
+    
+    <!--Datos a ingresar en consulta personalizada-->
+
+    <div class="container">
+        <div class="form-group col-md-3" ng-show="Ocultar">
             <label>Ingrese Monto</label>
             <input type="number" placeholder="Ingrese Monto"  ng-model="montoSolicitado" required="required">
         
             <label>Ingrese Cuotas</label>
             <input type="number" placeholder="Ingrese Cuotas"  ng-model="numeroCuotas" required="required">
         </div>
+    </div>
+    <br>
+    
        
 </form>
 
@@ -175,8 +187,17 @@
     </table>
 
 
+<footer>
+    <p style="color:white" class="text-center"><i>Todos los Derechos Reservados</i></p>
+    <p style="color:white" class="text-center"><i>(Componentes del footer)</i></p>
+</footer>
+
 </div>
-</div>
+
+
+
+
+
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 

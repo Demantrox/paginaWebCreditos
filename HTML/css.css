@@ -1,22 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Numans');
 
 html,body{
-    background-color: whitesmoke;
+    background-image: url(imagen/fondo.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     height: 100%;
     font-family: 'Numans', sans-serif;
 }
 
 footer{
-    position: auto;
-    left: 0;
+    position: absolute;
     bottom: 0;
-    width: 100%;
-    color: white;
+    width: inherit;
+    background-color: rgba(0,0,0,0.5);
     text-align: center;
 }
 
 .container{
-    height: 100%;
+    height: auto;
     align-content: center;
 }

@@ -5,17 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha384-PmY9l28YgO4JwMKbTvgaS7XNZJ30MK9FAZjjzXtlqyZCqBY6X6bXIkM++IkyinN+" crossorigin="anonymous">
-
+    <link rel="stylesheet" type="text/css" href="css.css">
     <title>Admin home</title>
 </head>
 <body>
+  <header>
+    <div class ="container-fluid">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                <a class="navbar-brand" href="Portada.html">Inicio</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="registro.html"><span class="glyphicon glyphicon-user"></span>Registro</a></li>
+                    <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                </ul>
+                </div>      
+            </div>
+        </nav> 
+    </div>
+</header>
+</br>
 
+
+    
 <div class ="container" ng-controller = "ctrlAdministrador">
+
+    <div class="d-flex justify-content-center h-100">
+        <div class="card">
+            <div class="card-header">
+                <br><br>
+                <h1 style="font-size:40px" align="center" class="text-primary"><strong>Bienvenido Administrador</strong></h1>
+                <br><br><br><br>
+            </div>
+        </div>
+    </div>
 
     <!--CREAR EJECUTIVO-->
 
-    <button ng-click ="mostrarFormularioEjecutivo = true">Crear Ejecutivo  </button>
-    <div ng-show = "mostrarFormularioEjecutivo">
+    <button ng-click ="ngMostrarOcultarFunEje(ngMostrarOcultarEje)">Crear Ejecutivo  </button>
+    <div ng-show = "ngMostrarOcultarEje">
    
     <!--RUT-->
 
@@ -65,8 +95,9 @@
 
                     <!--CREAR USUARIO NORMAL-->
     
-    <button ng-click ="mostrarFormularioUsuario = true">Crear Usuario </button>
-    <div ng-show = "mostrarFormularioUsuario">          
+    <button ng-click ="ngMostrarOcultarFunUsu
+    (ngMostrarOcultarUsu)">Crear Usuario </button>
+    <div ng-show = "ngMostrarOcultarUsu">          
                     <!--RUT-->
  
  <div class="input-group col-xs-4">
