@@ -91,24 +91,24 @@
 
     <div class="form-group" ng-show="ngMostrarOcultar">
         <div class="row">
-        <label>Ingrese Monto</label>
+        <label>Ingrese Monto a Solicitar</label>
             <div class="col-md-3">
-                <input type="number" placeholder="Ingrese Monto"  ng-model="montoSolicitado" required="required">     
+                <input type="number" placeholder="Ingrese Monto"  ng-model="montoSolicitado1" required="required">     
             </div>
         </div>
         <br>
         <div class="row">
-        <label>Ingrese Cuotas</label>  
+        <label>Ingrese Cuotas del Credito</label>  
             <div class="col-md-3">
-                <input type="number" placeholder="Ingrese Cuotas"  ng-model="numeroCuotas" required="required">
+                <input type="number" placeholder="Ingrese Cuotas"  ng-model="numeroCuotas1" required="required">
             </div> 
         </div>   
     </div>
-    <br><br><hr>
+    <br><hr>
                                    <!--BOTONES-->
     <!--Mostrar consulta personalizada, Simular con un banco o simular con todos-->
     <div style="text-align:center">
-        <button class="btn btn-success btn-sm" ng-click="ngMostrarOcultarFun(ngMostrarOcultar)">Personalizar Mi Credito</button>
+        <button class="btn btn-success btn-md" ng-click="ngMostrarOcultarFun(ngMostrarOcultar)">Personalizar Mi Credito</button>
         <button class="btn btn-primary " ng-click="llamarDatos()" >Simular</button>
         <button type="input" class="btn btn-info"  ng-click=traerBanco() >Simular Banco</button>
     </div><hr>

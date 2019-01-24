@@ -103,7 +103,9 @@ app.controller('ctrlTabla', function($scope,$http,$sce,$log){
             $scope.bancos[i].costoTotal = parseInt(($scope.bancos[i].cuota * NumCuotas) + $scope.bancos[i].gastosAsociados);
             //TOTAL DE INTERESES    
             $scope.bancos[i].totalIntereses = parseInt($scope.bancos[i].costoTotal - $scope.bancos[i].montoBrutoCredito);
-
+            
+            $scope.numeroCuotas1 = $scope.numeroCuotas;
+            $scope.montoSolicitado1 = $scope.montoSolicitado;
         
             console.log($scope.numeroCuotas);
             console.log(ti + "Tasa Interes");
@@ -127,20 +129,6 @@ app.controller('ctrlTabla', function($scope,$http,$sce,$log){
         }
     }
 
-    $scope.Mostrar = true;
-    $scope.Ocultar = false;
-    $scope.MostrarOtros = function(param){
-        if(param == "show"){
-            $scope.Mostrar = true;
-            $scope.Ocultar = true;
-        }else if(param == "hide"){
-            $scope.Mostrar = false;
-            $scope.Ocultar = false;
-        }else{
-            $scope.Mostrar = true;
-            $scope.Ocultar = false;
-        }
-    }
 });
         
 
