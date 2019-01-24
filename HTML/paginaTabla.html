@@ -31,7 +31,7 @@
     <br><hr>
 <form>
             <!--MONTO A SOLICITAR-->
-    <div class="form-group" ng-show="Mostrar">
+    <div class="form-group" ng-show="ngMostrarOcultar1">
         <label>Monto del Credito</label>
             <div class="col-md-3">
             <select  class="change form-control" tabindex="1" type="number" class="form-control" placeholder="Monto Solicitado"  ng-model="montoSolicitado" required="required" maxlength="10">
@@ -51,7 +51,7 @@
     </div>
              
                             <!--NUMERO DE CUOTAS-->
-    <div class ="form-group" ng-show="Mostrar"> 
+    <div class ="form-group" ng-show="ngMostrarOcultar1"> 
         <label>Numero de Cuotas</label>
             <div class ="col-md-3">
             <select class="form-control" placeholder="Numero de Cuotas" ng-model="numeroCuotas" required="required">
@@ -68,7 +68,7 @@
 
                      <!--TRAE LA INFO DE UN BANCO A ELECCION-->
                             <!--BANCO PERSONALIZADO-->
-    <div class ="form-group" ng-show="Mostrar">   
+    <div class ="form-group" ng-show="ngMostrarOcultar1">   
         <label >Simular un banco</label>
         <div class="col-md-3">
             <select class="form-control" ng-model ="nombre">
@@ -88,20 +88,9 @@
   
         </div>
     </div>
-    <br><hr>
-                                   <!--BOTONES-->
-    <!--Mostrar consulta personalizada, Simular con un banco o simular con todos-->
-    <div style="text-align:center">
-        <button class="btn btn-success btn-sm" ng-click="MostrarOtros('show')">Personalizar Mi Credito</button>
-        <button class="btn btn-primary " ng-click="llamarDatos()" >Simular</button>
-        <button type="input" class="btn btn-info"  ng-click=traerBanco() >Simular Banco</button>
-    </div><hr>
-
-    
-    <!--Datos a ingresar en consulta personalizada-->
 
     <div class="container">
-        <div class="form-group col-md-3" ng-show="Ocultar">
+        <div class="form-group col-md-3" ng-show="ngMostrarOcultar">
             <label>Ingrese Monto</label>
             <input type="number" placeholder="Ingrese Monto"  ng-model="montoSolicitado" required="required">
         
@@ -110,6 +99,19 @@
         </div>
     </div>
     <br>
+    <br><hr>
+                                   <!--BOTONES-->
+    <!--Mostrar consulta personalizada, Simular con un banco o simular con todos-->
+    <div style="text-align:center">
+        <button class="btn btn-success btn-sm" ng-click="ngMostrarOcultarFun(ngMostrarOcultar)">Personalizar Mi Credito</button>
+        <button class="btn btn-primary " ng-click="llamarDatos()" >Simular</button>
+        <button type="input" class="btn btn-info"  ng-click=traerBanco() >Simular Banco</button>
+    </div><hr>
+
+    
+    <!--Datos a ingresar en consulta personalizada-->
+
+    
     
        
 </form>

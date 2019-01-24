@@ -115,10 +115,17 @@ app.controller('ctrlTabla', function($scope,$http,$sce,$log){
         }
     }
        
-        
-
-    
-    
+    $scope.ngMostrarOcultar1 = true;
+    $scope.ngMostrarOcultar = false;
+    $scope.ngMostrarOcultarFun = function(ver){
+        if(ver){
+            $scope.ngMostrarOcultar = false;
+            $scope.ngMostrarOcultar1 = true;
+        }else{
+            $scope.ngMostrarOcultar = true;
+            $scope.ngMostrarOcultar1 = false;
+        }
+    }
 
     $scope.Mostrar = true;
     $scope.Ocultar = false;
